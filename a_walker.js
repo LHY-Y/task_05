@@ -14,9 +14,16 @@ class walker {
         this.pos.add(this.vel);
         this.vel.add(this.acc);
         this.acc.mult(0)
+        this.ceiling();
     }
 
     applyforce(force) {
         this.acc.add(force);
+    }
+
+    ceiling() {
+        if (this.pos.y-50<0) {
+            this.pos.y=50;
+        }
     }
 }
