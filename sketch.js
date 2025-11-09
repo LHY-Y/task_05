@@ -1,5 +1,4 @@
 let a_walker;
-let wind;
 
 function setup() {
   createCanvas(400, 400);
@@ -10,5 +9,9 @@ function draw() {
   background(220);
   a_walker.balloon();
   a_walker.update();
+
+  if (mouseIsPressed) {
+  let wind = createVector(0, -0.5);
   a_walker.applyforce(wind);
+  }
 }
