@@ -9,6 +9,7 @@ function draw() {
   background(220);
   a_walker.balloon();
   a_walker.update();
+  a_walker.pop();
 
   if (mouseIsPressed) {
   let wind = createVector(0, -0.02);

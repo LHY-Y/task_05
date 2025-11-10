@@ -4,10 +4,13 @@ class walker {
         this.vel=createVector();
         this.acc=createVector();
         this.r=0;
+        this.colorList=["red", "orange", "yellow", "green", "blue", "purple"];
+        this.color=(random(this.colorList));
     }
 
     balloon() {
-        fill("black");
+        noStroke();
+        fill(this.color);
         circle(this.pos.x, this.pos.y, this.r*2);
     }
 
@@ -29,6 +32,15 @@ class walker {
     ceiling() {
         if (this.pos.y-this.r<0) {
             this.pos.y=this.r;
+        }
+    }
+
+    pop() {
+        if (this.r>100) {
+            this.r=0;
+            this.pos=createVector(width/2, height/2);
+            this.vel.mult(0);
+            this.color=(random(this.colorList));
         }
     }
 }
