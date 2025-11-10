@@ -3,11 +3,16 @@ class walker {
         this.pos=createVector(width/2, height/2);
         this.vel=createVector();
         this.acc=createVector();
+        this.r=0;
     }
 
     balloon() {
         fill("black");
-        circle(this.pos.x, this.pos.y, 100);
+        circle(this.pos.x, this.pos.y, this.r*2);
+    }
+
+    radius(air) {
+        this.r += air;
     }
 
     update() {
@@ -22,8 +27,8 @@ class walker {
     }
 
     ceiling() {
-        if (this.pos.y-50<0) {
-            this.pos.y=50;
+        if (this.pos.y-this.r<0) {
+            this.pos.y=this.r;
         }
     }
 }

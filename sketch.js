@@ -11,7 +11,9 @@ function draw() {
   a_walker.update();
 
   if (mouseIsPressed) {
-  let wind = createVector(0, -0.5);
+  let wind = createVector(0, -0.02);
   a_walker.applyforce(wind);
+  let air = 0.5;
+  a_walker.radius(air);
   }
 }
